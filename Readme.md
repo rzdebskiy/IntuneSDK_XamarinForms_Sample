@@ -68,7 +68,7 @@ namespace IntuneSDKXFSample.Droid
 ```
 
 9. Replace *OnCreate(Bundle bundle)* and other methods in *MainActivity.cs* with the following overrides:
-```charp
+```csharp
         protected override void OnMAMCreate(Bundle bundle)
         {
             base.OnMAMCreate(bundle);
@@ -144,7 +144,7 @@ namespace IntuneSDKXFSample.Droid
         }
 ```
 9. Reference two namespaces to fix unresolved methods :
-```charp
+```csharp
 using Android.Content;
 using Android.App.Assist;
 ```
