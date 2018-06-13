@@ -3,12 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:IntuneSDKXFSample"
              x:Class="IntuneSDKXFSample.MainPage">
-
-    <StackLayout>
+    <StackLayout Orientation="Vertical"  >
         <!-- Place new controls here -->
-    	<Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+        <Label Text="Intune SDK Policies Sample App" HorizontalOptions="Center" VerticalOptions="Start" HeightRequest="100" />
+        <Label Text="Confidential Information" HorizontalOptions="Center" />
+        <Entry x:Name="txtEntry" Text="Very Sensitive Data" HorizontalOptions="Center" />
     </StackLayout>
 
 </ContentPage>
