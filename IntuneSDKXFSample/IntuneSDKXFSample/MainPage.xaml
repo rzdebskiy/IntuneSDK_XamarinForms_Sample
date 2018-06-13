@@ -2,7 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:IntuneSDKXFSample"
-             x:Class="IntuneSDKXFSample.MainPage">
+             x:Class="IntuneSDKXFSample.MainPage"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+                ios:Page.UseSafeArea="true"
+             >
     <StackLayout Orientation="Vertical"  >
         <!-- Place new controls here -->
         <Label Text="Intune SDK Policies Sample App" HorizontalOptions="Center" VerticalOptions="Start" HeightRequest="100" />
