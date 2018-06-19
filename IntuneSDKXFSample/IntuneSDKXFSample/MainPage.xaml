@@ -8,12 +8,12 @@
              >
     <StackLayout Orientation="Vertical"  >
         <!-- Place new controls here -->
-        <Label Text="Intune SDK Policies Sample App" HorizontalOptions="Center" VerticalOptions="Start" HeightRequest="100" />
+        <Label Text="Intune SDK Policies Sample App v1.1" HorizontalOptions="Center" VerticalOptions="Start" HeightRequest="100" />
         <Label Text="Confidential Information" HorizontalOptions="Center" />
         <Entry x:Name="txtEntry" Text="Very Sensitive Data" HorizontalOptions="Center" />
         <Label Text="User to enroll:" HorizontalOptions="Center" />
         <Entry x:Name="txtUser" Text="zdebskis@northwindspb.onmicrosoft.com" HorizontalOptions="Center" />
-        <Button x:Name="btnEnroll" Clicked="btnEnroll_Clicked" Text="Enroll (iOS)" />
+        <Button x:Name="btnEnroll" Clicked="btnEnroll_Clicked" Text="Login and Enroll (iOS)" />
     </StackLayout>
 
 </ContentPage>

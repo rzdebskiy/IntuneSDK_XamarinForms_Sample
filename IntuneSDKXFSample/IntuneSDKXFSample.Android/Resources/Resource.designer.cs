@@ -26,6 +26,9 @@ namespace IntuneSDKXFSample.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::Microsoft.IdentityModel.Clients.ActiveDirectory.Resource.Id.agentWebView = global::IntuneSDKXFSample.Droid.Resource.Id.agentWebView;
+			global::Microsoft.IdentityModel.Clients.ActiveDirectory.Resource.Layout.WebAuthenticationBroker = global::IntuneSDKXFSample.Droid.Resource.Layout.WebAuthenticationBroker;
+			global::Microsoft.IdentityModel.Clients.ActiveDirectory.Resource.String.ApplicationName = global::IntuneSDKXFSample.Droid.Resource.String.ApplicationName;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::IntuneSDKXFSample.Droid.Resource.Attribute.actionBarSize;
 		}
 		
@@ -3117,6 +3120,9 @@ namespace IntuneSDKXFSample.Droid
 			// aapt resource value: 0x7f0a0027
 			public const int add = 2131361831;
 			
+			// aapt resource value: 0x7f0a00c9
+			public const int agentWebView = 2131361993;
+			
 			// aapt resource value: 0x7f0a0070
 			public const int alertTitle = 2131361904;
 			
@@ -3297,8 +3303,8 @@ namespace IntuneSDKXFSample.Droid
 			// aapt resource value: 0x7f0a0061
 			public const int list_item = 2131361889;
 			
-			// aapt resource value: 0x7f0a00cb
-			public const int masked = 2131361995;
+			// aapt resource value: 0x7f0a00cc
+			public const int masked = 2131361996;
 			
 			// aapt resource value: 0x7f0a00b9
 			public const int media_actions = 2131361977;
@@ -3411,8 +3417,8 @@ namespace IntuneSDKXFSample.Droid
 			// aapt resource value: 0x7f0a00bb
 			public const int notification_main_column_container = 2131361979;
 			
-			// aapt resource value: 0x7f0a00c9
-			public const int offline_logo_textView = 2131361993;
+			// aapt resource value: 0x7f0a00ca
+			public const int offline_logo_textView = 2131361994;
 			
 			// aapt resource value: 0x7f0a004c
 			public const int parallax = 2131361868;
@@ -3636,8 +3642,8 @@ namespace IntuneSDKXFSample.Droid
 			// aapt resource value: 0x7f0a0016
 			public const int view_offset_helper = 2131361814;
 			
-			// aapt resource value: 0x7f0a00ca
-			public const int visible = 2131361994;
+			// aapt resource value: 0x7f0a00cb
+			public const int visible = 2131361995;
 			
 			// aapt resource value: 0x7f0a00ab
 			public const int volume_item_container = 2131361963;
@@ -3937,7 +3943,10 @@ namespace IntuneSDKXFSample.Droid
 			public const int tooltip = 2130968643;
 			
 			// aapt resource value: 0x7f040044
-			public const int wg_offline_startup_blocked = 2130968644;
+			public const int WebAuthenticationBroker = 2130968644;
+			
+			// aapt resource value: 0x7f040045
+			public const int wg_offline_startup_blocked = 2130968645;
 			
 			static Layout()
 			{
@@ -3989,6 +3998,9 @@ namespace IntuneSDKXFSample.Droid
 		
 		public partial class String
 		{
+			
+			// aapt resource value: 0x7f0b004f
+			public const int ApplicationName = 2131427407;
 			
 			// aapt resource value: 0x7f0b0015
 			public const int abc_action_bar_home_description = 2131427349;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.IdentityModel.Clients.ActiveDirectory;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,15 +11,36 @@ namespace IntuneSDKXFSample
 {
 	public partial class MainPage : ContentPage
 	{
-		public MainPage()
+        public static string clientId = "<<INSERT CLIENT ID HERE>>";
+        public static string authority = "https://login.windows.net/common";
+        public static string returnUri = "http://IntuneTest";
+        private const string graphResourceUri = "https://graph.windows.net";
+        private AuthenticationResult authResult = null;
+
+        public MainPage()
 		{
 			InitializeComponent();
 		}
 
-        private void btnEnroll_Clicked(object sender, EventArgs e)
+        private async void btnEnroll_Clicked(object sender, EventArgs e)
         {
-            var enroller = DependencyService.Get<IEnroll>();
-            enroller.Enroll(txtUser.Text);
+
+            try
+            {
+                var auth = DependencyService.Get<IAuthenticator>();
+                authResult = await auth.Authenticate(authority, graphResourceUri, clientId, returnUri);
+                var userUPN = authResult.UserInfo.DisplayableId;
+                await DisplayAlert("Token granted for", userUPN, "Ok", "Cancel");
+
+                var enroller = DependencyService.Get<IEnroll>();
+                enroller.Enroll(userUPN);
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error", ex.Message, "Ok");
+            }
+
+
         }
     }
 }

@@ -16,16 +16,23 @@ namespace IntuneSDKXFSample.iOS
     {
         void IEnroll.Enroll(string UPN)
         {
-            Debug.WriteLine("Enrolling");
-            IntuneMAMEnrollmentManager.Instance.EnrollmentRequestWithStatus += Instance_EnrollmentRequestWithStatus;
-            IntuneMAMEnrollmentManager.Instance.RegisterAndEnrollAccount(UPN);
-            Debug.WriteLine("Enrolled");
+            try
+            {
+                Debug.WriteLine("Enrolling");
+                //IntuneMAMEnrollmentManager.Instance.EnrollmentRequestWithStatus += Instance_EnrollmentRequestWithStatus;
+                IntuneMAMEnrollmentManager.Instance.RegisterAndEnrollAccount(UPN);
+                Debug.WriteLine("Enroll completed without exceptions");
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine($"Enrollment exceptions: {e.ToString()}");
+            }
         }
 
-        private void Instance_EnrollmentRequestWithStatus(object sender, EventArgs e)
-        {
-            // Debug.WriteLine(e.ToString());
-            ;
-        }
+        //private void Instance_EnrollmentRequestWithStatus(object sender, EventArgs e)
+        //{
+        //    // Debug.WriteLine(e.ToString());
+        //    ;
+        //}
     }
 }
