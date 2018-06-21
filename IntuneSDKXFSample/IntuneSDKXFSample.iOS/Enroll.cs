@@ -20,7 +20,8 @@ namespace IntuneSDKXFSample.iOS
             {
                 Debug.WriteLine("Enrolling");
                 //IntuneMAMEnrollmentManager.Instance.EnrollmentRequestWithStatus += Instance_EnrollmentRequestWithStatus;
-                IntuneMAMEnrollmentManager.Instance.RegisterAndEnrollAccount(UPN);
+                //IntuneMAMEnrollmentManager.Instance.RegisterAndEnrollAccount(UPN);
+                IntuneMAMEnrollmentManager.Instance.LoginAndEnrollAccount(UPN);
                 Debug.WriteLine("Enroll completed without exceptions");
             }
             catch (Exception e)

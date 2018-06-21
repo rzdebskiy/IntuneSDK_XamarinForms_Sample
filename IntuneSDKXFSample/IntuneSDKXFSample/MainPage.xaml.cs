@@ -27,13 +27,14 @@ namespace IntuneSDKXFSample
 
             try
             {
-                var auth = DependencyService.Get<IAuthenticator>();
-                authResult = await auth.Authenticate(authority, graphResourceUri, clientId, returnUri);
-                var userUPN = authResult.UserInfo.DisplayableId;
-                await DisplayAlert("Token granted for", userUPN, "Ok", "Cancel");
+                //var auth = DependencyService.Get<IAuthenticator>();
+                //authResult = await auth.Authenticate(authority, graphResourceUri, clientId, returnUri);
+                //var userUPN = authResult.UserInfo.DisplayableId;
+                //await DisplayAlert("Token granted for", userUPN, "Ok", "Cancel");
 
                 var enroller = DependencyService.Get<IEnroll>();
-                enroller.Enroll(userUPN);
+                //enroller.Enroll(userUPN);
+                enroller.Enroll(txtUser.Text);
             }
             catch (Exception ex)
             {
