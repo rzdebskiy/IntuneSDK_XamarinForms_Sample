@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Foundation;
-using UIKit;
 using Xamarin.Forms;
 using Microsoft.Intune.MAM;
 using System.Diagnostics;
@@ -19,8 +13,6 @@ namespace IntuneSDKXFSample.iOS
             try
             {
                 Debug.WriteLine("Enrolling");
-                //IntuneMAMEnrollmentManager.Instance.EnrollmentRequestWithStatus += Instance_EnrollmentRequestWithStatus;
-                //IntuneMAMEnrollmentManager.Instance.RegisterAndEnrollAccount(UPN);
                 IntuneMAMEnrollmentManager.Instance.LoginAndEnrollAccount(UPN);
                 Debug.WriteLine("Enroll completed without exceptions");
             }
@@ -29,11 +21,5 @@ namespace IntuneSDKXFSample.iOS
                 Debug.WriteLine($"Enrollment exceptions: {e.ToString()}");
             }
         }
-
-        //private void Instance_EnrollmentRequestWithStatus(object sender, EventArgs e)
-        //{
-        //    // Debug.WriteLine(e.ToString());
-        //    ;
-        //}
     }
 }

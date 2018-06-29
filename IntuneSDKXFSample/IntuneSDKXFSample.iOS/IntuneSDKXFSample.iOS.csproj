@@ -103,7 +103,6 @@
     <AppExtensionDebugBundleId />
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Authenticator.cs" />
     <Compile Include="Enroll.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
