@@ -179,6 +179,8 @@ IntuneMAMEnrollmentManager.Instance.LoginAndEnrollAccount(string UPN)
 >* use *LoginAndEnrollAccount* as advised above. If  you are only using ADAL to authenticate users and your app doesn’t  need to access Azure Active Directory resources, this is the simplest solution
 >* [ create Xamarin bindings](https://github.com/Azure-Samples/active-directory-xamarin-ios/tree/archive) for version [2.5.4 of ADAL for Objective-C](https://github.com/AzureAD/azure-activedirectory-library-for-objc/releases/tag/2.5.4) and use them to acquire an access token and call IntuneMAMEnrollmentManager.Instance.RegisterAndEnrollAccount(string identity);
 
+> **Additional Note**: there is no remapper for iOS. Integrating into a Xamarin.Forms app should be the same as for a regular Xamarin.iOS project.
+
 10. To do this platform-specific call we use Dependency Service in Xamarin Forms. Define IEnroll interface in common project:
 ```csharp
 public interface IEnroll
@@ -186,8 +188,13 @@ public interface IEnroll
     void Enroll(string UPN);
 }
 ````
-11. Provide iOS specific implementation in iOS project with *Dependency* assembly attribute (first line):
+11. Provide iOS specific implementation in iOS project with *Dependency* assembly attribute (first line after *using* statements):
 ```csharp
+using System;
+using Xamarin.Forms;
+using Microsoft.Intune.MAM;
+using System.Diagnostics;
+
 [assembly: Dependency(typeof(IntuneSDKXFSample.iOS.Enroll))]
 namespace IntuneSDKXFSample.iOS
 {
@@ -219,10 +226,12 @@ namespace IntuneSDKXFSample.iOS
             else await DisplayAlert("Warning", "For Android you don't need to call LoginAndEnrollAccount", "OK");
         }
 ````
+13. Build the project to ensure everything compiles successfully.
+14. [Publish the app](https://docs.microsoft.com/en-us/intune/lob-apps-ios) with Microsoft Intune with [app protection policy](https://docs.microsoft.com/en-us/intune/app-protection-policies) for [clipboard applied](https://docs.microsoft.com/en-us/intune/app-protection-policy-settings-ios).
+15. Install the app to the target device through Company Portal App, run it.
+16. Check that you are not able to copy text from the app to the other unprotected app (for instance built-in notes apps).
 
-
-
- Full guide is [here.](https://docs.microsoft.com/en-us/intune/app-sdk-xamarin)
+Full guide is [here.](https://docs.microsoft.com/en-us/intune/app-sdk-xamarin)
 
 
 
