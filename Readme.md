@@ -1,5 +1,9 @@
 ﻿# Xamarin Forms Intune SDK Sample and Step by Step Guide
 
+**Important** - here are the links to the official sample apps from Microsoft Intune’s product team:
+* [Xamarin.Android, Xamarin.Forms](https://github.com/msintuneappsdk/Taskr-Sample-Intune-Xamarin-Android-Apps)
+* [Xamarin.iOS](https://github.com/msintuneappsdk/sample-intune-xamarin-ios) 
+
 This sample and guide shows how to :
 * integrate Intune app protection policies support into Xamarin Forms app
 * publish app with Microsoft Intune 
